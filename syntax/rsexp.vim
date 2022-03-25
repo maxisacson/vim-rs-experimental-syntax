@@ -3,16 +3,14 @@ if exists("b:current_syntax")
 end
 
 syn match rsBlock "\(Parameters{\)\|}"
-syn match rsValue "\(\s*=\s*\)\@<=\(.*\)"
-" syn match rsKey ".*\(\s*=\s*\)\@="
-syn match rsGroup ".*\(\..*=\)\@="
+syn match rsValue "\(\s*=\s*\)\@<=\([^#]*\)"
+syn match rsGroup "\w*\(\..*=\)\@="
 syn match rsAssign "="
-syn match rsComment "\s*#.*"
+syn match rsComment "#.*$"
 
-hi link rsBlock Structure
 hi link rsComment Comment
+hi link rsBlock Structure
 hi link rsAssign Special
-" hi link rsKey Identifier
 hi link rsGroup Identifier
 hi link rsValue Constant
 
